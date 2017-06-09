@@ -1,0 +1,5 @@
+---
+type: page
+layout: profile
+---
+
