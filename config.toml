@@ -12,17 +12,29 @@ publishDir = "docs"
     post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
-    name = "Home"
-    url = "/index.html"
+    name = "Landing"
+    url = "/landing"
+    pre = "<i class='fa fa-home'></i>"
     weight = 1
 [[menu.main]]
-    name = "About"
-    url = "/about/"
+    name = "Profile"
+    url = "/profile"
+    pre = "<i class='fa fa-user'></i>"
     weight = 2
 [[menu.main]]
-    name = "Contact"
-    url = "/contact/"
+    name = "Signup"
+    url = "/signup"
     weight = 3
+[[menu.main]]
+    identifier = "twitter"
+    pre = "<i class='fa fa-twitter'></i>"
+    url = "https://twitter.com/CreativeTim"
+    weight = 4
+[[menu.main]]
+    identifier = "github"
+    pre = "<i class='fa fa-github'></i>"
+    url = "https://github.com/CreativeTim"
+    weight = 4
 
 
 [params]

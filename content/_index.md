@@ -1,6 +1,5 @@
 ---
-type: page
-layout: landing
+
 ---
 
 
