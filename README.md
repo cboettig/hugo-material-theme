@@ -6,4 +6,5 @@ Material-Kit is based on Google's Material Design using Bootstrap CSS.
 
 This project, Material-Kit and Bootstrap CSS code are all MIT licensed.
 
+[example site](https://cboettig.github.io/hugo-material-theme)
 
