@@ -21,13 +21,12 @@
               <a href="{{ .URL | relURL }}" class="dropdown-item">
                 {{ .Pre }} {{ .Name }}
               </a>
-            </li>
             {{end}}
-          </ul>
+          </div>
         </li>
         {{ else }}
         <li class="nav-item">
-          <a href="{{ .URL | relLangURL }}">
+          <a href="{{ .URL | relLangURL }}" class="nav-link">
             {{ .Pre }} {{ .Name }}
           </a>
         </li>
