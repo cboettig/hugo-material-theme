@@ -1,32 +1,21 @@
- <!-- Bootstrap core JavaScript
-    ================================================== -->
-  
-  
-  <!-- Placed at the end of the document so the pages load faster -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	
-	<!--   Core JS Files   -->
-	
-	<!--
-	<script src="{{"js/jquery.min.js" | relURL }}" type="text/javascript"></script>
-	<script src="{{"js/bootstrap.min.js" | relURL }}" type="text/javascript"></script>
-	-->
-	<script src="{{"js/material.min.js" | relURL }}"></script>
+<script src="{{"js/core/jquery.min.js" | relURL }}"></script>
+<script src="{{"js/core/popper.min.js" | relURL }}"></script>
+<script src="{{"js/bootstrap-material-design.js" | relURL }}"></script>
+<!--  Plugin for Date Time Picker and Full Calendar Plugin  -->
+<script src="{{"js/plugins/moment.min.js" | relURL }}"></script>
+<!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+<script src="{{"js/plugins/bootstrap-datetimepicker.min.js" | relURL }}"></script>
+<!--	Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+<script src="{{"js/plugins/nouislider.min.js" | relURL }}"></script>
+<!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
+<script src="{{"js/material-kit.js?v=2.0.0" | relURL }}"></script>
+<!-- Fixed Sidebar Nav - js With initialisations For Demo Purpose, Don't Include it in your project -->
+<script src="{{"assets-for-demo/js/material-kit-demo.js" | relURL }}"</script>
 
-
-	<!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-	<script src="{{"js/nouislider.min.js" | relURL }}" type="text/javascript"></script>
-	<!--  Plugin for the Datepicker, full documentation here: http://www.eyecon.ro/bootstrap-datepicker/ -->
-	<script src="{{"js/bootstrap-datepicker.js" | relURL }}" type="text/javascript"></script>
-
-	<!-- Control Center for Material Kit: activating the ripples, parallax effects, scripts from the example pages etc -->
-	<script src="{{"js/material-kit.js" | relURL }}" type="text/javascript"></script>
-
-   <!-- LaTeX math rendering -->
-    {{ if or .Params.math .Site.Params.math }}
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
-    </script>
-    <script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
-    {{ end }}
+<!-- LaTeX math rendering -->
+{{ if or .Params.math .Site.Params.math }}
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+</script>
+<script async src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML"></script>
+{{ end }}
