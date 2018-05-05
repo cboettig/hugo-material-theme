@@ -1,6 +1,6 @@
 ---
 title: Page Template
-background: "docs/img/bg.jpg"
+background: "../img/bg7.jpg"
 ---
 
 # Section 1
