@@ -1,7 +1,27 @@
 <!doctype html>
 <html lang="en">
-  {{partial "head.html" . }}
-  {{ block "body" . }}
-	{{ end }}
-  {{partial "javascript.html" . }}
+  {{ partial "head.html" . }}
+  <body class="{{ .Params.class | default "profile-page" }}">
+  {{ partial "nav.html" . }}
+  
+  <div class="page-header header-filter" 
+       data-parallax="true"
+       style="background-image: url('{{ (.Param "background")  | default "img/bg7.jpg" | relURL }}');">
+  </div>
+  <div class="main main-raised">
+	  <div class="profile-content">
+      <div class="container">
+  
+  {{ block "hero" . }}
+  {{ end }}
+        
+  {{ block "content" . }}
+  {{ end }}
+	
+	    </div>
+    </div>
+  </div>
+  {{ partial "footer.html" . }}
+  {{ partial "javascript.html" . }}
+  </body>
 </html>

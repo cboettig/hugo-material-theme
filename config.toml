@@ -1,4 +1,4 @@
-baseurl = "/"
+#baseurl = "/docs"
 relativeurls = true
 languageCode = "en-us"
 title = "Material Kit by Creative Tim"
@@ -12,50 +12,57 @@ publishDir = "docs"
     post = "/:year/:month/:day/:slug/"
 
 [[menu.main]]
+    pre = "<i class='fa fa-home'></i>"
     name = "Landing"
     url = "/landing"
-    pre = "<i class='fa fa-home'></i>"
-    weight = 1
+    weight = 2
 [[menu.main]]
+    pre = "<i class='fa fa-user'></i>"
     name = "Profile"
     url = "/profile"
-    pre = "<i class='fa fa-user'></i>"
-    weight = 2
+    weight = 3
 [[menu.main]]
     name = "Signup"
     url = "/signup"
-    weight = 3
+    weight = 4
 [[menu.main]]
-    name = "Dropdown"
+    pre = "<i class='material-icons'>apps</i>"
+    name = "Components"
     identifier = "dropdown"
     url = "#"
-    weight = 3
+    weight = 1
 [[menu.main]]
     parent = "dropdown"
-    name = "option 1"
+    pre = "<i class='material-icons'>layers</i>"
+    name = "All Components"
     url = "#"
 [[menu.main]]
     parent = "dropdown"
-    name = "option 2"
+    pre = "<i class='material-icons'>content_paste</i>"
+    name = "Documentation"
     url = "#"
 
-            
-    
-    
+
 [[menu.footer]]
     identifier = "twitter"
     pre = "<i class='fa fa-twitter'></i>"
     url = "https://twitter.com/CreativeTim"
-    weight = 4
+    weight = 1
 [[menu.footer]]
     identifier = "github"
     pre = "<i class='fa fa-github'></i>"
     url = "https://github.com/CreativeTim"
-    weight = 4
+    weight = 2
+[[menu.footer]]
+    identifier = "copyright"
+    name = "MIT"
+    pre = "<i class='fa fa-balance-scale'></i>"
+    url = "https://spdx.org/licenses/MIT"
+    weight = 3    
 
 
 [params]
-    background = "https://climate.nasa.gov/system/internal_resources/details/original/417_1263_banner-science-1600x500.jpg"
+#    background = "https://climate.nasa.gov/system/internal_resources/details/original/417_1263_banner-science-1600x500.jpg"
     name =  ""
     twitter =  ""
     github =  ""
@@ -74,11 +81,6 @@ publishDir = "docs"
     highlightjsLang = ["r", "yaml"]
     highlightjsTheme = "github"
 
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
 
     
 

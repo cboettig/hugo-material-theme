@@ -1,30 +1,64 @@
-{{ define "body" }}
-<body class="landing-page">
-  {{ partial "nav-fixed-top.html" . }}
-  <div class="wrapper">
-    <div class="header header-filter" style="background-image: url('{{ .Site.Params.background | relURL }}');">
-      <div class="container">
-        <div class="row">
-					<div class="col-md-6">
-              <h1 class="title">{{ .Title }}</h1>
-              <h4>{{ .Params.description }}</h4>
-              <br />
-					</div>
+
+{{ define "hero" }}
+{{ end }}
+
+
+{{ define "content" }}
+<!-- Optional Header Image -->
+  {{ if .Params.header.image }}
+  <div class="article-header">
+    <img src="{{ "/img/" | relURL }}/{{ .Params.header.image }}" class="article-banner" itemprop="image">
+    {{ with .Params.header.caption }}<span class="article-header-caption">{{ . | markdownify | emojify }}</span>{{ end }}
+  </div>
+  {{end}} 
+  
+  {{ with .Title }}<h1>{{ . }}</h1>{{ end }}
+   <!-- List pages can get Content and yaml metadata from an _index.md -->
+  {{ with .Content }}<div class="article-style" itemprop="articleBody">{{ . }}</div>{{ end }}
+  
+  <div class="container justify-content-center">
+    <div class="row">
+      {{ range .Paginator.Pages }}
+      <div class="col-md-6 col-lg-6 col-xl-6 ml-auto mr-auto">
+        <div class="card">
+          <ul class="nav justify-content-center">
+            <li class="nav-item">
+              <a href="{{ .RelPermalink }}" role="tab">
+                <i class="now-ui-icons files_paper"></i> <strong>{{ .Title }}</strong>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{{ .RelPermalink }}" role="tab">
+                <i class="now-ui-icons ui-1_calendar-60"></i>  {{.Date.Format "2006-01-02" }}
+              </a>
+            </li>
+          </ul>
+          <div class="card-body">
+          <!-- Tab panes -->
+          {{if .Params.image }}  <img src="{{ .Params.image  | relURL }}"  class="rounded" height="100px"/>    {{ end }}
+          {{.Summary}}
+          {{ if .Truncated }}<div><a href="{{ .RelPermalink }}">Read More…</a> </div>{{ end }}
+          </div>
         </div>
       </div>
-    </div>
-		<div class="main main-raised">
-			<div class="container">
-		  	<div class="section text-center section-landing">
-		  	  <div class="row">
-		  	    <div class="col-md-6 col-md-offset-3">  
-	            {{ .Content }}
-	          </div>
-          </div>   
-	      </div>
-      </div>
-		</div>
-    {{ partial "footer" . }}
-	</div>
-</body>
-{{ end }}
+      {{ end }}
+    </div> <!-- end row-->
+  </div><!-- end container-->
+
+  {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+  <nav>
+    <ul class="pager">
+      {{ if .Paginator.HasPrev }}
+      <li><a href="{{ .Paginator.Prev.URL | relURL }}">&laquo; Previous</a></li>
+      {{ end }}
+      {{ if .Paginator.HasNext }}
+      <li><a href="{{ .Paginator.Next.URL | relURL }}">Next &raquo;</a></li>
+      {{ end }}
+    </ul>
+  </nav>
+  {{ end }}
+  <br />  
+  
+  
+{{end}}
+
